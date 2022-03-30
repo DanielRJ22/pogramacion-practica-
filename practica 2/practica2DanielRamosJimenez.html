@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculadora con JavaScript</title>
+<link type="text/css" href="estilo.css" rel="stylesheet">
+</head>
+<body onload="init();">
+<table class="calculadora">
+<tr>
+  <td colspan="4"><span id="resultado"></span></td>
+</tr>
+<tr>
+  <td><button id="siete">7</button></td><td><button id="ocho">8</button></td><td><button id="nueve">9</button></td><td><button id="division">/</button></td>
+</tr>
+<tr>
+  <td><button id="cuatro">4</button></td><td><button id="cinco">5</button></td><td><button id="seis">6</button></td><td><button id="multiplicacion">*</button></td>
+</tr>
+<tr>
+  <td><button id="uno">1</button></td><td><button id="dos">2</button></td><td><button id="tres">3</button></td><td><button id="resta">-</button></td>
+</tr>
+<tr>
+  <td><button id="igual">=</button></td><td><button id="reset">C</button></td><td><button id="cero">0</button></td><td><button id="suma">+</button></td>
+</tr>
+<tr>
+  <td colspan="4"><span id="creditos">Hecho por Daniel Ramos Jimenez.com : ) </span></td>
+</tr>
+</table>
+<script src="funcionalidad.js"></script>
+
+</script>
+<center><h3>Formula Cuadrática</h3></center>
+<form action="">
+    <table border="2" align="center">
+        <tr>
+            <td>
+                Ingrese el valor a:
+                <input type = "number" name = "r1" id = "r1">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ingrese el valor b:
+                <input type = "number" name = "r2" id = "r2">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ingrese el valor c:
+                <input type = "number" name = "r3" id = "r3">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type = "button" value ="Calcular" onclick ="Cuadratica_Mart();">
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+    //
+function Cuadratica_Mart() 
+{
+    let a = parseInt(document.getElementById("r1").value);
+    let b = parseInt(document.getElementById("r2").value);
+    let c = parseInt(document.getElementById("r3").value);
+    let parte1 = (-1)*b;
+    let parte2 = Math.pow(b,2)-(4*a*c);
+    let parte3 = 2*a;
+    if (parte2 > 0) {
+        let x1 = (parte1 - Math.sqrt(parte2))/parte3;
+        let x2 = (parte1 + Math.sqrt(parte2))/parte3;
+        alert("Los  valores de x son: "+ parseFloat(x1) + " y " +parseFloat(x2));
+    } else {
+        let x3 = parte1/parte3;
+        alert("El valor de x es: "+ parseFloat(x3));
+    }
+}
+
+
+
+    </script>
+
+</body>
+</html>
